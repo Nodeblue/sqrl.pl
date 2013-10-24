@@ -1,0 +1,81 @@
+SQRL - Secure QR Login
+
+Pronounced "squirrel"
+
+An Illustrated Guide
+
+
+An easy-to-use, high security replacement for usernames and passwords.
+
+
+How does SQRL work?
+
+  <image: computer with login and QR>
+  When you visit a website that supports SQRL you will be presented with a QR code to login with.
+  
+  <image: computer and phone showing QR>
+  Using your SQRL app take a picture of the QR code.
+  
+  <image: confirm url and checkbox on phone>
+  The SQRL app will confirm the website you are attempting to login and that you want to authenticate to the website.
+  
+  <image: welcome displayed on computer>
+  Depending on how the website operates you may need to click login or it may automatically do it for you. Now you are authenticated without needing to type a thing!
+  
+  <image: tablet with QR and login, hand on tablet>
+  However if you are logging in to a phone, tablet or computer directly you will be able to tap or click the QR code for your SQRL app to authenticate you. Depending on the app it may be able to verify the site automatically.
+
+
+- Simple, secure. -
+
+
+What's going on behind the scenes?
+  
+  <image: phone with cogs pointing to SQRL ID card>
+  The first time you use SQRL, you will be required to invent a master password, from which a SQRL ID is cryptographically generated. This ID is a 256-bit (very very large) random number, unique and never shared.
+  
+  <image: QR = site + challenge>
+  When you visit a SQRL enabled website the QR code/link contains the website and a random cryptographic challenge number.
+  
+  <image: SQRL ID + website = Website ID>
+  Using the website address and your SQRL ID it hashes them together to create a website unique identity. This identity will keep your SQRL ID safe and totally unique for each website you use SQRL with.
+  
+  <image: Site ID to Public/Private Keys>
+  This identity is used to create a website specific public key pair. (More info: <link: http://www.youdzone.com/signature.html text:What is a Digital Signature?>)
+  
+  <image: challenge digitally signed, includes public key>
+  The random cryptographic challenge is digitally signed using your private key and sent back with your public key. The website is then able to confirm that the user who produced the signature used the private key corresponding to the public key.
+
+  <image: public key verfied against sig, public key = user>  
+  Once the signed random cryptographic challenge is verified the website is then able to authenticate your device. The website is able to do this by keeping track of the random cryptographic challenges it sends out.
+
+
+Frequently Asked Questions (FAQ)
+
+  <image: computer displaying welcome new user>  
+  Can I use this to sign up to a website?
+    Of course! Depending on the website it may ask your for more information like a traditional sign up process or could allow you stay anonymous.
+
+  <image: phone with pin number> 
+  What if someone steals my phone?
+    Generally you will use a master password to unlock your SQRL app.
+
+  <image: login vs QR> 
+  What is the benefit over traditional usernames & passwords?
+    There are no usernames or passwords to have compromised, lost or stolen.
+    No keyboard interaction, great for using public computers that could log your keystrokes.
+    You only need your SQRL ID, no lists of usernames and passwords to keep track of.
+    There is NO WAY to link one person across sites based only on the generated website ID, websites may ask for more infomation that could be tracked.
+
+
+Apps
+
+  SQRL is still being worked out, when some apps are available they will be added here!
+
+
+Resources
+ 
+  Watch Leo & Steve discuss how SQRL works.
+  <video:http://www.youtube.com/watch?v=ZrQboo3pA10>
+
+  GRC SQRL Site <link: https://www.grc.com/sqrl/sqrl.htm> - Detailed information from the inventor.
