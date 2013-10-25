@@ -58,7 +58,8 @@ Frequently Asked Questions (FAQ)
 
   <image: phone with pin number> 
   What if someone steals my phone?
-    Generally you will use a master password to unlock your SQRL app.
+    Generally you will use a master password to unlock your SQRL app. It is the user's responsability to secure the app with a strong password. Some apps could potentially offer alternative ways to secure acceess in the event of a stolen phone.
+    In the rare and unlikely event the password securing the app is compermised (stolen phone), the SQRL protocal will allow a method of revocation allowing you to establish a new identity with websites.
 
   <image: login vs QR> 
   What is the benefit over traditional usernames & passwords?
