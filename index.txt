@@ -33,6 +33,9 @@ What's going on behind the scenes?
   
   <image: phone with cogs pointing to SQRL ID card>
   The first time you use SQRL, you will be required to invent a master password, from which a SQRL ID is cryptographically generated. This ID is a 256-bit (very very large) random number, unique and never shared.
+
+  <image: Private Unlock key being exported to paper/file. Public Lock key saved>
+  Additionally the first time using SQRL an identity lock (public) and an identity unlock (private) key pair are generated. The unlock key must be safely stored away from your SQRL app (such as printing it as a QR code). This will allow you to cancel and replace your SQRL ID in the event that someone was to get a hold of your SQRL ID.
   
   <image: QR = site + challenge>
   When you visit a SQRL enabled website the QR code/link contains the website and a random cryptographic challenge number.
@@ -41,13 +44,36 @@ What's going on behind the scenes?
   Using the website address and your SQRL ID it hashes them together to create a website unique identity. This identity will keep your SQRL ID safe and totally unique for each website you use SQRL with.
   
   <image: Site ID to Public/Private Keys>
-  This identity is used to create a website specific public key pair. (More info: <link: http://www.youdzone.com/signature.html text:What is a Digital Signature?>)
+  This identity is used to create a website specific public/private key pair. (More info: <link: http://www.youdzone.com/signature.html text:What is a Digital Signature?>)
   
   <image: challenge digitally signed, includes public key>
   The random cryptographic challenge is digitally signed using your private key and sent back with your public key. The website is then able to confirm that the user who produced the signature used the private key corresponding to the public key.
 
+  <image: challenge digitally signed, includes public key>
+  The app also offers the website some puzzle pieces based on your Identity Lock key for the purpose of being able to change your SQRL ID. See <link: #idlock text: Identity Lock> below for more details.
+
   <image: public key verfied against sig, public key = user>  
   Once the signed random cryptographic challenge is verified the website is then able to authenticate your device. The website is able to do this by keeping track of the random cryptographic challenges it sends out.
+
+
+Identity Lock
+
+  <image: >  
+  SQRL Identity Lock uses something called Diffie-Hellman (DH) Key Agreement (KA) or DHKA for short. It basically allows 2 sets of public/private keys to create a shared secret.
+  
+
+  <image: >
+  We have 1 set of Identity Lock/Unlock keys already, this was generated when we created our SQRL ID. The 2nd set of public/private keys are randomly generated each time.
+  
+  <image: >  
+  DHKA will generate a shared secret using the Identity Lock public key and the random private key. You will generate the same shared secret using the random public key and the Identity Lock key. 
+
+  <image: >  
+  The website is sent the shared secret from using the Identity Lock public key and the random private key as well as the random public key. This protects the Identity Lock Key from identifying you between sites.
+
+  <image: >  
+  Now we have a puzzle that only your Identity Unlock Key can solve.
+
 
 
 Frequently Asked Questions (FAQ)
