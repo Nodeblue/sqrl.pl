@@ -71,7 +71,7 @@ Identity Lock: 101
   The website is sent the unlock code as well as the Random Public Key. Protecting the Identity Lock Key from being used. Using the Identity Lock Key would identify you between websites.
   
   <image: flow of unlock private and random public through DHKA = secret>  
-  The Random Private Key is now permanently destroyed. From now on, THE ONLY way to recreate the secret is by using your Identity Unlock Key (which should be kept safely offline) and the Random Public Key (which is stored remotely at the website with the generated unlock code). The physical separation of these two keys is the essence of the Identity Lock.
+  The Random Private Key is now permanently destroyed. From now on, THE ONLY way to recreate the unlock code is by using your Identity Unlock Key (which should be kept safely offline) and the Random Public Key (which is stored remotely at the website with the generated unlock code). The physical separation of these two keys is the essence of the Identity Lock.
   
 
 Identity Lock: Replacing your SQRL ID 
