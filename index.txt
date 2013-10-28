@@ -26,8 +26,15 @@ How does SQRL work?
   However if you are logging in to a phone, tablet or computer directly you will be able to tap or click the QR code for your SQRL app to authenticate you. Depending on the app it may be able to verify the site automatically.
 
 
-- Simple, secure. -
+Why SQRL?
 
+  <image: multiple devices, QR codes>
+
+  Giving you control over authentication
+  
+  SQRL is much more than the ability to use QR codes, it's about giving you the control over authentication. There is no 3rd party involvement in the authentication process and no shared secrets with a website that could be compromised and have your passwords exposed.
+
+  A single SQRL ID is the basis for authenticating you to all SQRL enabled websites. Part of the power of SQRL is that there is no way to track your identity between websites as your SQRL ID is never shared but utilises site specific digital signatures instead. As your SQRL ID is quite important the power of Identity Lock gives you the ability to prevent changes and recover if your SQRL ID was ever exposed.
 
 What's going on behind the scenes?
   
