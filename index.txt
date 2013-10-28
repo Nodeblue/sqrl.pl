@@ -32,43 +32,43 @@ How does SQRL work?
 What's going on behind the scenes?
   
   <image: phone with cogs pointing to SQRL ID card>
-  The first time you use SQRL, you will be required to invent a master password, from which a SQRL ID is cryptographically generated. This ID is a 256-bit (very very large) random number, unique and never shared.
-
-  <image: Private Unlock key being exported to paper/file. Public Lock key saved>
-  Additionally the first time using SQRL an Identity Lock (public) and an Identity Unlock (private) Key pair are generated. The Identity Unlock Key must be safely stored away from your SQRL app (such as printing it as a QR code). This will allow you to cancel and replace your SQRL ID in the event that someone was to get a hold of your master SQRL ID.
+  The first time you use SQRL the app will be require you to invent a master password, from which a SQRL ID is cryptographically generated. This ID is a 256-bit (very very large) random number, unique and never shared.
   
+  <image: Private Unlock key being exported to paper/file. Public Lock key saved>
+  Additionally the first time using SQRL an Identity Lock (public) and an Identity Unlock (private) Key pair are generated via the SQRL app. The Identity Unlock Key must be safely stored away (such as printing it as a QR code). This will allow you to cancel and replace your SQRL ID in the event that someone was to get a hold of your SQRL ID.
+
   <image: QR = site + challenge>
-  When you visit a SQRL enabled website the QR code/link contains the website and a random cryptographic challenge number.
+  When you visit a SQRL enabled website the QR code/link contains the website address and a random cryptographic challenge number.
   
   <image: SQRL ID + website = Website ID>
-  Using the website address and your SQRL ID it hashes them together to create a website unique identity. This identity will keep your SQRL ID safe and totally unique for each website you use SQRL with.
+  The SQRL app hashes the website address and your SQRL ID together to create a website unique identity. This identity will keep your SQRL ID safe and totally unique for each website you use SQRL with.
   
   <image: Site ID to Public/Private Keys>
   This identity is used to create a website specific public/private key pair. (More info: <link: http://www.youdzone.com/signature.html text:What is a Digital Signature?>)
   
   <image: challenge digitally signed with private key, includes public key>
-  The random cryptographic challenge is digitally signed using your Website Private Key and sent back with your Website Public Key. The website is then able to confirm that the user who produced the signature used the private key corresponding to the public key.
-
+  The SQRL app digitally signs the random cryptographic challenge using your private key and sends it back to the website along with your public key. The website is then able to confirm that the user who produced the signature used the private key corresponding to the public key.
+  
   <image: challenge digitally signed, includes public key>
   The app also offers the website some puzzle pieces based on your Identity Lock key for the purpose of being able to change your SQRL ID. See <link: #idlock text: Identity Lock> below for more details.
 
   <image: public key verfied against sig, public key = user>  
-  Once the signed random cryptographic challenge is verified the website is then able to authenticate your device. The website is able to do this by keeping track of the random cryptographic challenges it sends out.
-
+  Once the signed random cryptographic challenge is verified by the website is then able to authenticate your device. The website is able to do this by keeping track of the random cryptographic challenges it sends out.
+  
 
 Identity Lock: 101
 
   <image: DHKA equation>
-  SQRL Identity Lock uses something called Diffie-Hellman (DH) Key Agreement (KA) or DHKA for short. It basically allows 2 sets of public/private keys to create an unlock code; it uses the public key of one with the private key of the other and vice versa. Both combinations will output the same unlock code. Magic (or crazy math)!  
+  SQRL Identity Lock uses something called Diffie-Hellman (DH) Key Agreement (KA) or DHKA for short. It basically allows 2 sets of public/private keys to create an unlock code; it uses the public key of one with the private key of the other and vice versa. Both combinations will output the same unlock code. Magic (or crazy math)!
   
   <image: 2 sets of keys, identity and random> 
-  We have 1 set of Identity Lock/Unlock Keys already, this was generated when we created the SQRL ID. The 2nd set of public/private keys are randomly generated.
+  We have 1 set of Identity Lock/Unlock Keys already, this was generated when we created the SQRL ID. The 2nd set of public/private keys are randomly generated within the SQRL app.
   
   <image: DHKA using public lock and private random = secret>  
-  DHKA will generate a unlock code using the Identity Lock (public) Key and the Random Private Key. From what we know above if we used the Random Public Key and the Identity Unlock (private) Key it would generate the same unlock code.
+  In the SQRL app using DHKA it will generate an unlock code using the Identity Lock (public) Key and the Random Private Key. From what we know above if we used the Random Public Key and the Identity Unlock (private) Key it would generate the same unlock code.
   
   <image: random public & secret>  
-  The website is sent the unlock code as well as the Random Public Key. Protecting the Identity Lock Key from being used. Using the Identity Lock Key would identify you between websites.
+  The website is sent the unlock code as well as the Random Public Key. By creating a random key pair it keeps the unlock code and Random Public key unique, protecting the Identity Lock Key from being used. Using the Identity Lock Key would identify you between websites.
   
   <image: flow of unlock private and random public through DHKA = secret>  
   The Random Private Key is now permanently destroyed. From now on, THE ONLY way to recreate the unlock code is by using your Identity Unlock Key (which should be kept safely offline) and the Random Public Key (which is stored remotely at the website with the generated unlock code). The physical separation of these two keys is the essence of the Identity Lock.
@@ -77,7 +77,7 @@ Identity Lock: 101
 Identity Lock: Replacing your SQRL ID 
   
   <image: Import Unlock Key>  
-  From your super secret hiding place guarded by laser wielding ninjas, you will retrieve your Identity Unlock Key and import it into your SQRL app.
+  From your super secret hiding place guarded by laser wielding ninjas, you will retrieve your Identity Unlock Key and import it into the SQRL app.
   
   <image: new SQRL ID>
   The SQRL app will need to generate a new SQRL ID, this will be the replacement ID.
@@ -86,17 +86,17 @@ Identity Lock: Replacing your SQRL ID
   The website will send the SQRL app the Random Public Key it has stored and another random cryptographic challenge (same idea as previous).
   
   <image: DHKA private unlock and random public = secret>  
-  Using the Random Public Key that was retrieved from the website and the imported Identity Unlock Key you will create the same unlock code that the website has stored.
+  Using the Random Public Key that was retrieved from the website and the imported Identity Unlock Key the SQRL app will create the same unlock code that the website has stored.
   
   <image: hashed challenge + public keys> 
   The unlock code is hashed with the random cryptographic challenge, this is digitally signed using the old and new Website Private Key and sent back with the old and new Website Public Key.
   
   <image: secret + challenge = signed with keys>  
-  The website can use it's copy of the unlock code to verify the results of the hash sent back to it. The digital signature that can be checked against the old Website Public Key is also verified.
+  The website can use its copy of the unlock code to verify the results of the hash sent back to it from the SQRL app. The digital signature that used the old Website Public Key is also verified by the website.
   
   <image: public key>
-  Once both are verfied the website is able to replace the old Website Public Key for the new Website Public Key. This check proves you not only have the SQRL ID but also the Identity Unlock Key.
-
+  Once both are verified the website is able to replace the old Website Public Key for the new Website Public Key. This check proves you not only have the old SQRL ID but also the Identity Unlock Key.
+  
 Frequently Asked Questions (FAQ)
 
   <image: computer displaying welcome new user>  
