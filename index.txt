@@ -1,4 +1,4 @@
-SQRL - Secure QR Login
+SQRL Authentication
 
 Pronounced "squirrel"
 
@@ -8,22 +8,16 @@ An Illustrated Guide
 An easy-to-use, high security replacement for usernames and passwords.
 
 
-How does SQRL work?
+3 ways to use SQRL
 
-  <image: computer with login and QR>
-  When you visit a website that supports SQRL you will be presented with a QR code to login with.
+  <icon: phone> Scan the code
+  Visit a website that supports SQRL on any device. Now using the SQRL app on an internet enabled mobile device take a photo of the QR code. Your mobile device will authenticate the device displaying the QR code.
+
+  <icon: tablet> Tap the code
+  From the browser of an mobile device tap on the QR code, this will launch your SQRL app and authenticate the device.
   
-  <image: computer and phone showing QR>
-  Using your SQRL app take a picture of the QR code.
-  
-  <image: confirm url and checkbox on phone>
-  The SQRL app will confirm the website you are attempting to login and that you want to authenticate to the website.
-  
-  <image: welcome displayed on computer>
-  Depending on how the website operates you may need to click login or it may automatically do it for you. Now you are authenticated without needing to type a thing!
-  
-  <image: tablet with QR and login, hand on tablet>
-  However if you are logging in to a phone, tablet or computer directly you will be able to tap or click the QR code for your SQRL app to authenticate you. Depending on the app it may be able to verify the site automatically.
+  <icon: laptop> Click the code
+  On a laptop or desktop click on the QR code, this will lauch your SQRL app and authenticate the device.
 
 
 Why SQRL?
@@ -34,8 +28,9 @@ Why SQRL?
   
   SQRL is much more than the ability to use QR codes, it's about giving you the control over authentication. There is no 3rd party involvement in the authentication process and no shared secrets with a website that could be compromised and have your passwords exposed.
 
-  A single SQRL ID is the basis for authenticating you to all SQRL enabled websites. Part of the power of SQRL is that there is no way to track your identity between websites based solely on your SQRL ID as it is never shared but utilises site specific digital signatures instead. As your SQRL ID is quite important the power of Identity Lock gives you the ability to prevent changes and recover if your SQRL ID was ever exposed.
-  
+  A single SQRL ID is the basis for authenticating you to all SQRL enabled websites. Part of the power of SQRL is that there is no way to track your identity between websites based solely on your SQRL ID. This ID is never shared but utilises unique site specific digital signatures to prove your identity. As your SQRL ID is quite important the power of Identity Lock gives you the ability to prevent changes and recover if your SQRL ID was ever exposed.  
+
+
 What's going on behind the scenes?
   
   <image: phone with cogs pointing to SQRL ID card>
