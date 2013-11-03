@@ -10,14 +10,14 @@ An easy-to-use, high security replacement for usernames and passwords.
 
 3 ways to use SQRL
 
-  <icon: phone> Scan the code
+  <icon: laptop> Click
+  On a laptop or desktop click on the SQRL login button or the QR code, this will lauch your SQRL app and authenticate the device.
+
+  <icon: phone> Snap
   Visit a website that supports SQRL on any device. Now using the SQRL app on an internet enabled mobile device take a photo of the QR code. Your mobile device will authenticate the device displaying the QR code.
 
-  <icon: tablet> Tap the code
-  From the browser of a mobile device tap on the QR code, this will launch your SQRL app and authenticate the device.
-  
-  <icon: laptop> Click the code
-  On a laptop or desktop click on the QR code, this will lauch your SQRL app and authenticate the device.
+  <icon: tablet> Tap
+  From the browser of a mobile device tap on the SQRL login button or QR code, this will launch your SQRL app and authenticate the device.
 
 
 Why SQRL?
