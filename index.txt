@@ -14,7 +14,7 @@ An easy-to-use, high security replacement for usernames and passwords.
   On a laptop or desktop click on the SQRL login button or the QR code, this will lauch your SQRL app and authenticate the device.
 
   <icon: phone> Snap
-  Visit a website that supports SQRL on any device. Now using the SQRL app on an internet enabled mobile device take a photo of the QR code. Your mobile device will authenticate the device displaying the QR code.
+  Visit a website that supports SQRL on any device. Now using the SQRL app on an internet enabled mobile device take a photo (snap) of the QR code. Your mobile device will authenticate the device displaying the QR code.
 
   <icon: tablet> Tap
   From the browser of a mobile device tap on the SQRL login button or QR code, this will launch your SQRL app and authenticate the device.
